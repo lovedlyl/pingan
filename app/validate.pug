@@ -1,0 +1,43 @@
+extends _layout
+include _engin
+block inline-script
+	script
+		include js/validate.html.js
+block content
+	//- .container-fluid
+	+head("请填写身份验证信息")
+	.container
+		form(name="id-details")
+			.form-group
+				label(for="cnName") 姓名
+				input#cnName(name="cnName" type="text" placeholder="请填写真实姓名" data-storage="cnName" data-validate="cnName")
+				+tooltip
+			.form-group
+				label(for="idType") 证件类型
+				select#idType(name="idType" disabled data-toggle="dropdown" data-src="true" data-storage="idType" data-validate="idType")
+				button(data-toggle="dropdown").icon &rsaquo;
+			.form-group
+				label(for="idNo") 证件号
+				input#idNo(name="idNo" type="text" placeholder="请填写证件号码" data-storage="idNo" data-validate="idNo")
+				+tooltip
+			.form-group
+				label(for="gender") 性别
+				select(disabled  data-toggle="dropdown" data-src="true" data-storage="gender"  data-validate="gender")#gender
+					option(value=0 selected) 女士
+					option(value=1) 先生
+				button(data-toggle="dropdown").icon &rsaquo;
+			.form-group
+				label(form="dateOfBirth") 出身日期
+				input#dateOfBirth(type="date" data-storage="dob"  data-validate="dob")
+				+tooltip
+			.form-group.validCode
+				label(for="validCode") 验证码
+				input#validCode(name="validCode" type="text" data-storage="validCode" placeholder="请输入验证码")
+				//- img#validCodeImg(src="data:image/gif;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAcADoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3m7uoLG0murmQRwwoXdj2ArCtfHXh67uY4EvSryMFTfEwDE++P51a8Vadd6t4durGy2edNtUbzgY3DP6VwOq6reW1ldeF9Tgiju2hQ2slsoHmHOAv6da7cLho1l5+uy77anVQoKqvP9O56Xaatp19I0drfW8zr95EkBI/Cs3UPGWg6ZKYbjUEMoOCiAsR+XFcX4WthJ4guFvLRbfUrK0Ma2kY2CfgjJbvUdxKk3iOy0TW9LisrdirJb2xBDHOAXbqa3WBgqri22kr6W9dO5osLFVHFu6Sv0/DudevjW0uPEttotnbyTyzIHMoICopXd+PH866evJvhoo1DxfqeoOACiHYPQE4wPoBXrNc2Noxo1FTj0Sv6tXMcVSjSnyLolf13CiiiuQ5yhq66k1jjSniW53A/vehHpXFXPgfWdRuG1i8vYv7WjKtCq/cG05xXolFdFHE1KPwfl+HobUq86XwHB23h7xHNqNzrV1Lbw6n5QjhEfKYzU2keDr2TV5NX1+4jmvCpVBH0Wu2oqnjKrTSsrq23TsN4mettL6fLsee2nw2u9Mmkn07xBNbSuTnZHgEfnXQ6HF4ms7w22rTW15abTsuUG1wfQiuhoqamJqVfj1+Sv8AeKdec/j1+QUUUVzmJ//Z")
+				img#validCodeImg(src="")
+				button#getValidCodeBtn.btn 换一张	
+			+warning
+			+submit
+				|提交
+	+modal
+

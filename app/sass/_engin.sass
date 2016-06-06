@@ -1,0 +1,174 @@
+@import "variables"
+=border($color: #000)
+	border: 1px solid $color
+
+=appear($value)
+	-webkit-appearance: $value
+	-moz-appearance: $value
+	appearance: $value
+
+
+//圆形边框 
+=border-radius($size)
+	-webkit-border-radius: $size
+	-moz-border-radius: $size
+	border-radius: $size
+
+
+%h2
+	height: 2rem
+	line-height: 2rem
+
+%h3
+	height: 3rem
+	line-height: 3rem
+
+%h4
+	height: 4rem
+	line-height: 4rem
+
+//所有相对定位 
+%relative
+	position: relative
+//所有绝对定位 
+%absolute
+	position: absolute
+//所有左浮动 
+%fl
+	float: left
+//所有有浮动
+%fr
+	float: right
+
+//所有文本居中 
+%tc
+	text-align: center
+
+//文本居右显示 
+%tr
+	text-align: right
+//所有显示为inline-block元素 
+%di
+	display: inline-block
+//所有隐藏元素 
+%dn
+	display: none
+
+//所有块状元素 
+%db
+	display: block
+
+//outline: none 
+%on
+	outline: none
+
+//所有p元素都有20px的上外边距，主要应用于index.html 
+p 
+	margin-bottom: 1rem
+
+
+/* 元素居中，左右有间隙 */
+.container
+	width: 94%
+	margin: 0 3%
+
+
+/* 有箭头符号的按钮 */
+
+.icon
+	font-size: 2rem
+	color: $gray
+	@extend %h2
+
+	// vertical-align: text-bottom
+
+	// vertical-align: middle
+	// white-space: nowrap
+	// -webkit-border-fit: border
+	// -webkit-appearance: none
+	// -webkit-box-sizing: content-box
+	// -webkit-box-align: start
+	// -webkit-border-fit: lines
+	// -webkit-margin-collapse: discard
+
+button.icon::-moz-focus-inner
+	border: none
+	padding: 0
+	margin: -0.5rem 0 0 -0.1rem
+// button.icon
+// 	-webkit-appearance: caret
+
+
+
+/* 有圆形边框的图标 */
+.icon-circle
+	@extend %tc
+	border: 1px solid $gray
+	width: 2rem
+	height: 2rem
+	// line-height: 1rem
+	+border-radius(2rem)
+	+appear(none)
+	vertical-align: middle
+.icon-circle::after
+	// content: "200"
+	// margin-left: 100px
+	// margin-top: -1000000000px
+	// padding: 100px
+	// display: inline
+	// display: block
+	// display: contents
+	// display: list-item
+	// display: inline-block
+	// display: inline-table
+	// display: table
+	// display: table-cell
+	// display: table-column
+	// display: table-column-group
+	// display: table-footer-group
+	// display: table-header-group
+	// display: table-row
+	// display: table-row-group
+	// display: flex
+	// display: inline-flex
+	// display: grid
+	// display: inline-grid
+	// display: ruby
+	// display: ruby-base
+	// display: ruby-text
+	// display: ruby-base-container
+	// display: ruby-text-container 
+	// display: run-in
+	// display: inherit
+	// display: initial
+	// display: unset
+
+
+
+/* success.html页面主体文本有很大间隙 */
+.text-sucess, .text-sucess span
+	font-size: 1.4rem
+
+
+
+.text-info
+	color: $orange
+
+/* 按钮样式 */
+.btn
+	+border-radius(0.2rem)
+	@extend %tc
+	@extend %h2
+	background-color: $orange
+	color: $white
+	// cursor: pointer
+
+
+
+.btn-info
+	@extend %db
+	width: 100%
+	// +border
+	font-weight: bold	
+	// white-space: nowrap
+/* 按钮样式结束 */

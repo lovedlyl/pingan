@@ -1,0 +1,30 @@
+doctype html
+html(lang="zh-CN")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		//- meat(name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		//- 返回上一页时，保存表单数据?????
+		//- meta(http-equiv="Cache-Control" content="private")
+		link(rel="stylesheet" href="css/main.css")
+		//- script(src="js/zepto.min.js")
+		//- block inline-script
+		//- each script in ["index.js", "validate.js", "dropdown.js", "tooltip.js"]
+		//- 	script(src="js/" + script)
+		block title
+			title 忘记密码
+	body
+		.container
+			header.header
+				button(data-toggle="back").icon.icon-circle &lsaquo;
+				a(href="#").regist 注册
+				h1 忘记密码
+		.clearfix
+		block content
+			p default content
+		script(src="js/zepto.min.js")
+		each script in ["plugins.js"]
+				script(src="js/" + script)
+		script(src="js/index.js")
+		block inline-script

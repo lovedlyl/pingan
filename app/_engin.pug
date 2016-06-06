@@ -1,0 +1,40 @@
+mixin dropdown()
+	.dropdown
+		.finish
+			.container
+				//- .row
+				button.icon.icon-circle.close &lsaquo;
+				button.finished 完成
+		ul.choose
+		
+mixin head(str)
+	h2.lead: .container #{str}
+
+//- 验证提示消息
+mixin warning
+	//- .clearfix
+	//- .warning
+	//- 	if block
+	//- 		block
+
+mixin tooltip
+	//- span.tooltip
+	//- 	span.info
+	//- 		if block
+	//- 			block
+	//- 	i.tooltip-arrow
+
+mixin submit
+	button#submit.btn.btn-info
+		if block
+			block
+	//- input(type="submit" value="提交")#submit.btn.btn-info
+
+mixin modal()
+	.modal
+		.modal-dialog
+			.modal-header 提醒！
+			.modal-content
+			//- .modal-content 对不起，您的帐号存在异常，请联系客服95511转4转8
+			button.modal-footer.close 关闭 
+		.modal-blackdrop

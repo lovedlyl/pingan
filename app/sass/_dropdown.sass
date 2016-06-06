@@ -1,0 +1,31 @@
+@import "engin"
+/*下拉弹出框 */
+// 上下1px 边框
+%vb1px
+	border-top: 1px solid #ebebeb
+	border-bottom: 1px solid #ebebeb
+	
+.dropdown
+	@extend %absolute
+	top: 1000px
+	width: 100%
+	background-color: #fff
+	.finish 
+		// background-color: #000
+		@extend %vb1px
+		@extend %h2
+		padding: 0.4rem 0
+		.finished
+			@extend %fr
+			@extend %h2
+	.choose
+		// border-top: 1px solid #ebebeb
+		margin-top: 2rem
+		li
+			@extend %tc
+			@extend %h2
+			color: $gray
+		li.on
+			@extend %vb1px
+			color: $gray-lt
+/*下拉弹出框结束*/

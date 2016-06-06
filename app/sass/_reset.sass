@@ -1,0 +1,49 @@
+@import variables
+@import "engin"
+/* 元素样式重置 */
+html, body, h1, h2, span, form, label, input, select, option, a, ul, li, button
+	padding: 0
+	margin: 0
+	font-family: $font-family
+	font-size: 1rem
+	// overflow: hidden
+	color: $gray-lt
+	background-color: transparent
+	font-weight: normal
+ul
+	list-style: none
+
+a
+	text-decoration: none
+
+// select标签样式重置
+select, input
+	border: none
+	outline: none
+	box-sizing: content-box
+	background-color: transparent 
+	border-color: transparent
+	+appear(none)
+	
+// 重置button标签样式
+button
+	border: none
+	background-color: transparent
+	outline: none
+	// font-weight: normal
+	// 显示方式，和input元素一样
+	box-sizing: content-box
+
+
+.clearfix 
+	*zoom: 1
+
+
+.clearfix:after 
+	content: "\0020"
+	display: block
+	height: 0
+	clear: both
+	overflow: hidden
+	visibility: hidden
+/* 重置结束 */

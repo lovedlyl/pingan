@@ -1,0 +1,30 @@
+//- 验证账户信息
+extends _layout
+include _engin
+block title
+	title 一账通登录
+block inline-script
+	script
+		include js/account.html.js
+block content
+	+head("平安银行网银用户验证银行账户信息")
+	.container
+		form(name="acount-validate")
+			.form-group
+				label(for="cardType") 卡类型
+				select#cardType(name="cardType" disabled data-toggle="dropdown" data-src="true" data-storage="cardType")
+					option(value=0 selected) 借记卡/信用卡
+					option(value=1) 一账通卡
+				button(data-toggle="dropdown").icon &rsaquo;
+			.form-group
+				label(for="cardNo") 卡号
+				input#cardNo(name="cardNo" type="text" placeholder="请输入卡号" data-storage="cardNo" data-validate="bankNo")
+				+tooltip
+			.form-group
+				label(for="password") 密码
+				input#password(name="password" type="password" data-storage="password" placeholder="请输入交易密码" data-validate="bankPwd")
+				+tooltip
+			+warning
+			+submit
+				|下一步
+	+modal

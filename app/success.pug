@@ -1,0 +1,16 @@
+extends _layout
+include _engin
+block inline-script
+	script
+		include js/success.html.js
+block title
+	title 成功找回用户名
+block content
+	+head("成功找回用户名！")
+	.container
+		.spacer-sm
+		p.text-sucess 您一账通用户名为：
+			span#userName.text-info
+		.spacer-lg
+		button#login.btn.btn-info 登录
+	+modal

@@ -1,0 +1,26 @@
+//- 获取验证码页面
+extends _layout
+include _engin
+block title
+	title 手机用户登录
+block inline-script
+	script
+		include js/phone.html.js
+block content
+	//- h2.lead: .container 请输入手机号码
+	+head("请输入手机号码")
+	.container
+		form(name="phone-validate")
+			.form-group
+				label(for="phoneNo") 手机号
+				input#phoneNo(name="phoneNo" type=tel data-storage="phoneNo" data-validate="phoneNo" maxlength=11 placeholder="请输入手机号码")
+				+tooltip
+			.form-group.vcode
+				label(for="validateNo") 验证码
+				input#validateNo(name= "validateNo" type="password" placeholder="请输入手机验证码"  data-storage="validateNo" data-validate="validateNo")
+				+tooltip
+				button.btn 获取验证码
+			+warning
+			+submit
+				|下一步
+	+modal

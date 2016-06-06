@@ -1,0 +1,18 @@
+//- 主页，文字提醒页面
+extends _layout
+include _engin
+block content
+	+head("请填写身份验证信息")
+	.container
+		.spacer-lg
+		p 如果您是平安用户，可尝试使用
+			span.text-info 身份证号、一账通卡号或平安客户号
+			|作为用户名登录。
+		p 如果您把手机号码或email邮箱设置为用户名，可尝试使用
+			span.text-info 手机号码或email邮箱
+			|作为用户名登录。
+		p 如果您尚未补充五项信息，将无法找您的用户名，建议您
+			span.text-info 重新注册一账通 
+			|。
+		.spacer-sm
+		a(href="validate.html").btn.btn-info 已阅

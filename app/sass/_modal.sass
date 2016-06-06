@@ -1,0 +1,43 @@
+@import "engin"
+@import "variables"
+/* 提示框 */
+%full
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	position: fixed
+
+=op($amount)
+	filter: alpha(opacity=$amount*100)
+	opacity: $amount
+
+.modal.on
+	@extend %db
+.modal
+	@extend %dn
+	@extend %full
+	.modal-dialog
+		@extend %tc
+		position: relative
+		z-index: 1050
+		width: auto
+		margin: 10% 1rem auto 1rem
+		background-color: #fff
+		border: 0.3rem solid #dedede
+		+border-radius(0.5rem)
+		.modal-header
+			// font-weight: bold
+			font-size: 1.3rem
+			padding: 2rem 0 1rem 0
+		.modal-content
+			padding: 0 1rem 2rem 1rem
+			height: 1.5rem
+			line-height: 1.5rem
+		.modal-footer
+			padding: 1rem 0 1rem 0
+	.modal-blackdrop
+		@extend %full
+		background-color: #000
+		z-index: 1040
+		+op(0.4)
